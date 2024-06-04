@@ -1,5 +1,7 @@
 package com.riwi.Surveys_Riwi.api.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
@@ -58,5 +60,13 @@ public class SurveyController {
     @PostMapping
     public ResponseEntity<SurveyResponse> create(@Validated @RequestBody SurveyRequest request){
         return ResponseEntity.ok(this.surveyService.create(request));
+    }
+
+    @Operation(
+        summary = "Get all survey titles",
+        description = "Get all survey titles")  
+    @GetMapping(path = "/surveysTitle/{title}")
+    public ResponseEntity<List<SurveyResponse>> getAllSurveyTitle(@PathVariable String title) {
+        return ResponseEntity.ok(this.surveyService.findByTitle(title));
     }
 }
