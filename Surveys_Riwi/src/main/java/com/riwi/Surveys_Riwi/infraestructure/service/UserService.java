@@ -71,7 +71,7 @@ public class UserService implements IUserService{
            .name(request.getName())
            .email(request.getEmail())
            .password(request.getPassword())
-           .active(request.isActive())
+           .active(request.getActive())
            .build();
     }
 

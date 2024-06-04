@@ -35,7 +35,7 @@ public class Question {
     @Column(length = 50, nullable = false)
     private String type;
     @Column(nullable = false)
-    private boolean active;
+    private Boolean active;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "survey_id", referencedColumnName = "id")

@@ -1,7 +1,5 @@
 package com.riwi.Surveys_Riwi.api.dto.response;
 
-import java.time.LocalDateTime;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -11,11 +9,8 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class SurveyResponse {
+public class OptionQuestionResponse {
     private Long id;
-    private String title;
-    private String description;
-    private LocalDateTime creationDate;
+    private String text;
     private Boolean active;
-    private UserResponse user;
 }
