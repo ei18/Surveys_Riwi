@@ -62,7 +62,7 @@ public class UserService implements IUserService{
            .name(entity.getName())
            .email(entity.getEmail())
            .password(entity.getPassword())
-           .active(entity.isActive())
+           .active(entity.getActive())
            .build();
     }
 
