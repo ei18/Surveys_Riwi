@@ -15,4 +15,5 @@ public class OptionQuestionRequest {
     private String text;
     @NotBlank(message = ErrorMessages.RequiredActive)
     private Boolean active;
+    private Long questionId;
 }
