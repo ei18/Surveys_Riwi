@@ -112,7 +112,7 @@ public class SurveyService implements ISurveyService{
     }
 
     private Survey find(Long id) {
-        return this.surveyRepository.findById(id).orElseThrow(() -> new BadRequestException((ErrorMessages.idNotFound("Course"))));
+        return this.surveyRepository.findById(id).orElseThrow(() -> new BadRequestException((ErrorMessages.idNotFound("Survey"))));
     }
 
     private List<SurveyResponse> entityToResponseSurvey (List<Survey> surveys){

@@ -19,4 +19,6 @@ public class QuestionRequest {
     private String type;
     @NotBlank(message = ErrorMessages.RequiredActive)
     private Boolean active;
+    private Long surveyId;
+    private Long optionQuestionId;
 }
