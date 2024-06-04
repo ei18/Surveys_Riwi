@@ -11,8 +11,8 @@ public class ErrorMessages {
     public static final String RequiredName= "Name is required";
     public static final String RequiredEmail= "Email is required";
     public static final String RequiredPassword= "Password is required";
-    public static final String RequiredActive= "Active is required";
-    public static final String RequiredTitle= "Title is required";
+    public static final String RequiredActive= "Active is required to be TRUE";
+    public static final String RequiredTitle= "The title already exists, enter a new one";
     public static final String RequiredDate= "Creation date is required";
     public static final String RequiredText = "Text is required";            
     public static final String RequiredType= "Type is required";    

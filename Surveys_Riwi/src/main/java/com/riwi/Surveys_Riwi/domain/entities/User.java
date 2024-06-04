@@ -33,7 +33,7 @@ public class User {
     @Column(length = 255, nullable = false)
     private String password;
     @Column(nullable = false)
-    private boolean active;
+    private Boolean active;
 
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
