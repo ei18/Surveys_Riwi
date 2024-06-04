@@ -5,7 +5,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.ErrorResponse;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -71,17 +70,5 @@ public class UserController {
     @PutMapping(path = "{id}")
     public ResponseEntity<UserResponse> update(@Validated @RequestBody UserRequest request, @PathVariable Long id){
         return ResponseEntity.ok(this.userService.update(request, id));
-    }
-
-    @ApiResponse(responseCode = "400", description = "When the id is invalid", content = {
-        @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorResponse.class))
-    })
-    @Operation(
-        summary = "Delete a user by id",
-        description = "Delete a user by id")  
-    @DeleteMapping(path = "{id}")
-    public ResponseEntity<Void> delete(@PathVariable Long id){
-        this.userService.delete(id);
-        return ResponseEntity.noContent().build();
     }
 }
