@@ -37,7 +37,7 @@ public class Survey {
     @Column(nullable = false)
     private LocalDateTime creationDate = LocalDateTime.now();
     @Column(nullable = false)
-    private boolean active;
+    private Boolean active;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "creator_id", referencedColumnName = "id")

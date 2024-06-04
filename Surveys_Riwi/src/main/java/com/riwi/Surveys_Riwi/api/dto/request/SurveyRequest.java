@@ -2,6 +2,8 @@ package com.riwi.Surveys_Riwi.api.dto.request;
 
 import java.time.LocalDateTime;
 
+import com.riwi.Surveys_Riwi.utils.messages.ErrorMessages;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -14,14 +16,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SurveyRequest {
-    @NotBlank(message = "The title is required")
-    @Size(min = 1, max = 100, message = "The title must have a maximum of 255 characters.")
+    @NotBlank(message = ErrorMessages.RequiredTitle)
+    @Size(min = 1, max = 255, message = "The title must have a maximum of 255 characters.")
     private String title;
     private String description;
-    @NotBlank(message = "The creation date is required")
+    @NotBlank(message = ErrorMessages.RequiredDate)
     private LocalDateTime creationDate;
-    @NotBlank(message = "The active is required")
-    private boolean active;
+    @NotBlank(message = ErrorMessages.RequiredActive)
+    private Boolean active;
     private Long creatorId;
     private Long questionId;
 }

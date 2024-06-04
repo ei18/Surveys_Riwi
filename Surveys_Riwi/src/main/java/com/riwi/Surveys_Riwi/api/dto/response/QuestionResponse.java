@@ -13,5 +13,5 @@ public class QuestionResponse {
     private Long id;
     private String text;
     private String type;
-    private boolean active;
+    private Boolean active;
 }
