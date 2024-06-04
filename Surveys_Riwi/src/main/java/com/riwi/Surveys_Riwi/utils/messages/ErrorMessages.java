@@ -8,10 +8,17 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 public class ErrorMessages {
-    private final String mensaje = "hola";
-    
+    public static final String RequiredName= "Name is required";
+    public static final String RequiredEmail= "Email is required";
+    public static final String RequiredPassword= "Password is required";
+    public static final String RequiredActive= "Active is required";
+    public static final String RequiredTitle= "Title is required";
+    public static final String RequiredDate= "Creation date is required";
+    public static final String RequiredText = "Text is required";            
+    public static final String RequiredType= "Type is required";    
+           
     public static String idNotFound(String entity){
-       final String message = "No hay registros en la entidad %s con el id suministrado";
+       final String message = "There are no records with entity %s with the supplied id";
        return String.format(message, entity);
     }
 }
