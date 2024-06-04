@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 
 import com.riwi.Surveys_Riwi.api.dto.request.QuestionRequest;
 import com.riwi.Surveys_Riwi.api.dto.response.QuestionResponse;
-import com.riwi.Surveys_Riwi.domain.entities.OptionQuestion;
 import com.riwi.Surveys_Riwi.domain.entities.Question;
 import com.riwi.Surveys_Riwi.domain.repositories.QuestionRepository;
 import com.riwi.Surveys_Riwi.infraestructure.abstract_service.IQuestionService;

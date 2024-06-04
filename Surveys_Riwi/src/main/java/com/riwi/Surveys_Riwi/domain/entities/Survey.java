@@ -41,7 +41,7 @@ public class Survey {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "creator_id", referencedColumnName = "id")
-    private User creator; 
+    private User user; 
     
     @ToString.Exclude
     @EqualsAndHashCode.Exclude
