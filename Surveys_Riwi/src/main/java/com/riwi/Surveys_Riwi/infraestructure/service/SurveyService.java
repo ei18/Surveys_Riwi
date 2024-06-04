@@ -1,6 +1,7 @@
 package com.riwi.Surveys_Riwi.infraestructure.service;
 
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Objects;
 
 import org.springframework.beans.BeanUtils;
@@ -43,6 +44,10 @@ public class SurveyService implements ISurveyService{
         Survey survey = this.requestToEntity(request);
         survey.setUser(user);
 
+        if (request.getTitle().equals(findByTitle(request.getTitle()))){
+           throw new BadRequestException(ErrorMessages.RequiredTitle);
+        }
+
         if (Objects.nonNull(user.getEmail())) {
             this.emailHelper.sendMail(user.getEmail(), user.getName());
         }
@@ -72,6 +77,11 @@ public class SurveyService implements ISurveyService{
     public void delete(Long id) {
     }
     
+    @Override
+    public List<SurveyResponse> findByTitle(String title) {
+        return entityToResponseSurvey(this.surveyRepository.findByTitle(title));
+    }
+
     private SurveyResponse entityToResponse(Survey entity) {
        UserResponse user = new UserResponse();
        BeanUtils.copyProperties(entity.getUser(), user); 
@@ -103,5 +113,12 @@ public class SurveyService implements ISurveyService{
 
     private Survey find(Long id) {
         return this.surveyRepository.findById(id).orElseThrow(() -> new BadRequestException((ErrorMessages.idNotFound("Course"))));
+    }
+
+    private List<SurveyResponse> entityToResponseSurvey (List<Survey> surveys){
+        return surveys.stream()
+                .map(survey -> SurveyResponse.builder()
+                        .title(survey.getTitle())
+                        .build()).toList();
     }
 }
