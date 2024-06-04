@@ -13,6 +13,6 @@ import java.util.List;
 @SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ErrorsResponse {
+public class ErrorsResponse extends BaseErrorResponse{
     private List<String> errors;
 }
